@@ -32,4 +32,12 @@ public class Atuendo {
 	public Stream<Prenda> combinaYEsDe(Stream<Prenda> prendas,Categoria c){
 		return prendas.findAny(p->p.cat == PRENDAINFERIOR && p.combina(superior));
 	}
+
+	@Override
+	public String toString() {
+		return "Atuendo [superior=" + superior + ", inferior=" + inferior + ", calzado=" + calzado + ", accesorio="
+				+ accesorio + "]";
+	}
+	
 }
+
