@@ -1,6 +1,4 @@
 package codigo;
-import java.util.*;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class Atuendo {
@@ -17,20 +15,20 @@ public class Atuendo {
 	}
 	
 	public void conseguirSuperior(Stream<Prenda> prendas) {
-		superior = prendas.findAny(p->p.cat == PRENDASUPERIOR);
+		superior = (Prenda)  prendas.filter(p->p.cat.reconocedor == "superior");
 	}
 	public void conseguirInferior(Stream<Prenda> prendas) {
-		inferior = this.combinaYEsDe(prendas, PARTEINFERIOR);
+		inferior = (Prenda) this.combinaYEsDe(prendas, "infeior");
 	}
 	public void conseguirCalzado(Stream<Prenda> prendas) {
-		calzado = this.combinaYEsDe(prendas, CALZADO);
+		calzado = (Prenda) this.combinaYEsDe(prendas, "calzado");
 	}
 	public void conseguirAccesorios(Stream<Prenda> prendas) {
-		accesorio = this.combinaYEsDe(prendas, ACCESORIOS) ;
+		accesorio = (Prenda) this.combinaYEsDe(prendas, "accesorio") ;
 	}	
 	
-	public Stream<Prenda> combinaYEsDe(Stream<Prenda> prendas,Categoria c){
-		return prendas.findAny(p->p.cat == PRENDAINFERIOR && p.combina(superior));
+	public Stream<Prenda> combinaYEsDe(Stream<Prenda> prendas,String c){
+		return prendas.filter(p->p.cat.reconocedor == c && p.combina(superior));
 	}
 
 	@Override

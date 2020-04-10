@@ -1,5 +1,5 @@
 package codigo;
 
 public enum Clima {
-	LLUVIA,SOL,VIENTO
+	LLUVIA,SOL,VIENTO,TEMPLADO,FRIO
 }
