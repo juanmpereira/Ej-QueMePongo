@@ -1,6 +1,5 @@
 package codigo;
-
-import Exceptions.IngresoVacioException;
+import Exceptions.*;
 
 //import Exceptions.IngresoVacioException;
 
@@ -10,4 +9,5 @@ public class Preconditions {
 		if (value == null)
 		throw new IngresoVacioException("no puede no ingresar dato");
 	}
+	
 }
