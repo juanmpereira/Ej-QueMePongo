@@ -1,6 +1,5 @@
 package codigo;
 
-import Exceptions.*;
 
 public class Prenda {
 	String trama = "lisa";
@@ -11,7 +10,7 @@ public class Prenda {
 	Color colorSecuendario;
 	
 	public Prenda() {}
-	public Prenda(Tipo tipo,Clima climaPrenda,Color color,Material material) throws IngresoNoValidoException {
+/*	public Prenda(Tipo tipo,Clima climaPrenda,Color color,Material material) throws IngresoNoValidoException {
 		Preconditions.validateNotNull(color);//hago esto para no repetir codigo
 		Preconditions.validateNotNull(tipo);
 		Preconditions.validateNotNull(material);
@@ -19,7 +18,9 @@ public class Prenda {
 		this.color=color;
 		this.climaPrenda = climaPrenda;
 		this.material=material;
-	}
+	}*/ //esto lo utilizaba si no tenia el borrador
+	
+	
 /*	public boolean combina(Prenda prenda) {
 		return material == prenda.material && color == prenda.color;
 	}*/ //como comprobar si combina la prenda o no.

@@ -2,7 +2,7 @@ package codigo;
 import java.util.*;
 
 public class Usuario {
-  public List<Prenda> prendas;
+  private List<Prenda> prendas;
   public Usuario(List<Prenda> prendas) {
 	  this.prendas = prendas;
   }
