@@ -25,7 +25,7 @@ public class PrendasTest {
 		Tipo remera  = new Tipo (Categoria.PARTESUPERIOR);
 		remeraRoja = new Borrador();
 		remeraRoja.especificarTipo(remera);
-		remeraRoja.especificarClima(Clima.TEMPLADO);
+		remeraRoja.especificarClima(Clima.NOLLUVIA);
 		remeraRoja.especificarColor(Color.ROJO);
 		remeraRoja.especificarMaterial(Material.LANA);
 		prendasJuan = new ArrayList<Prenda>();
@@ -39,7 +39,7 @@ public class PrendasTest {
 		Borrador buzoRoja = new Borrador();
 		Tipo buzo = new Tipo (Categoria.PARTESUPERIOR);
 		buzoRoja.especificarTipo(buzo);
-		buzoRoja.especificarClima(Clima.TEMPLADO);
+		buzoRoja.especificarClima(Clima.NOLLUVIA);
 		buzoRoja.especificarColor(Color.ROJO);
 		buzoRoja.especificarMaterial(Material.LANA);
 		Prenda buzoRojo = buzoRoja.crearPrenda();
@@ -51,7 +51,7 @@ public class PrendasTest {
 	public void errorPorIngresoVacio() throws IngresoNoValidoException {
 		try {
 		Borrador camperaRoja = new Borrador();
-		camperaRoja.especificarClima(Clima.TEMPLADO);
+		camperaRoja.especificarClima(Clima.NOLLUVIA);
 		camperaRoja.especificarColor(Color.ROJO);
 		camperaRoja.especificarMaterial(Material.LANA);
 				fail("no puede no ingresar dato");

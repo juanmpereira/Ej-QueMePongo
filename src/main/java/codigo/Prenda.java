@@ -21,9 +21,12 @@ public class Prenda {
 	}*/ //esto lo utilizaba si no tenia el borrador
 	
 	
-/*	public boolean combina(Prenda prenda) {
+	public boolean combina(Prenda prenda) {
+		if(prenda == null)
+		return true;
+		else
 		return material == prenda.material && color == prenda.color;
-	}*/ //como comprobar si combina la prenda o no.
+	} //como comprobar si combina la prenda o no.
 
 	public void setTrama(String trama) {
 		this.trama = trama;
