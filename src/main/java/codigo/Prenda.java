@@ -4,7 +4,6 @@ package codigo;
 public class Prenda {
 	String trama = "lisa";
 	Tipo tipo;
-	Clima climaPrenda;
 	Color color;
 	Material material;
 	Color colorSecuendario;
@@ -36,10 +35,6 @@ public class Prenda {
 		this.tipo = tipo;
 	}
 
-	public void setClimaPrenda(Clima climaPrenda) {
-		this.climaPrenda = climaPrenda;
-	}
-
 	public void setColor(Color color) {
 		this.color = color;
 	}
@@ -58,10 +53,6 @@ public class Prenda {
 
 	public Tipo getTipo() {
 		return tipo;
-	}
-
-	public Clima getClimaPrenda() {
-		return climaPrenda;
 	}
 
 	public Color getColor() {

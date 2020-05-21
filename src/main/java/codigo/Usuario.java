@@ -2,16 +2,15 @@ package codigo;
 import java.util.*;
 
 public class Usuario {
-  public List<Prenda> prendas;
-  public Usuario(List<Prenda> prendas) {
-	  this.prendas = prendas;
-  }
+  private List<Prenda> prendas = new ArrayList<Prenda>();
+ 
+  public Usuario() {}
   
   public void agregarPrenda(Prenda p){
 	  prendas.add(p);
   }
   
-  public Prenda getLista(int nro) {
+  public Prenda getPrenda(int nro) {
 	  return prendas.get(nro);
   }
 

@@ -1,6 +1,7 @@
 package codigo;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Atuendo {
 	Prenda prendaSuperior;
@@ -18,8 +19,8 @@ public class Atuendo {
 	
 	public Prenda seleccionarPrenda(Usuario usuario,Categoria cat) {
 		if (cat == Categoria.PARTESUPERIOR) 
-		return  ((List<Prenda>) usuario.prendas.stream().filter(p->p.getClimaPrenda() == clima.obtener())).get(0);
+		return  usuario.prendas.stream().filter(p->p.getClimaPrenda() == clima.obtener()).findFirst();
 		else
-		return  ((List<Prenda>) usuario.prendas.stream().filter(p->p.getClimaPrenda() == clima.obtener() && p.combina(prendaSuperior))).get(0);
+		return  usuario.prendas.stream().filter(p->p.getClimaPrenda() == clima.obtener() && p.combina(prendaSuperior)).findFirst();
 	}
 }

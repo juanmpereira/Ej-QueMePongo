@@ -4,6 +4,7 @@ import Exceptions.IngresoVacioException;
 
 public class Borrador {
 	Prenda prendaEnConstruccion = new Prenda();
+	
 	public void especificarTipo(Tipo tipo) throws IngresoVacioException{
 		Preconditions.validateNotNull(tipo);
 		prendaEnConstruccion.setTipo(tipo);
@@ -33,15 +34,9 @@ public class Borrador {
 		prendaEnConstruccion.setTrama(trama);
 	}
 	
-	public void especificarClima(Clima climaPrenda) throws IngresoVacioException {
-		Preconditions.validateNotNull(prendaEnConstruccion.getTipo());
-		Preconditions.validateNotNull(climaPrenda);
-		prendaEnConstruccion.setClimaPrenda(climaPrenda);
-	}
-	
 	public Prenda crearPrenda() throws IngresoVacioException {
 		this.validar();
-		return prendaEnConstruccion = new Prenda();
+		return prendaEnConstruccion;
 	}
 	
 	void validar() throws IngresoVacioException {
