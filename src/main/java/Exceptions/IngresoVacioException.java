@@ -1,6 +1,6 @@
 package Exceptions;
 
-public class IngresoVacioException extends IngresoNoValidoException {
+public class IngresoVacioException extends RuntimeException {
 	/**
 	 * 
 	 */

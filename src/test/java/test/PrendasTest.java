@@ -15,10 +15,9 @@ import Exceptions.IngresoNoValidoException;
 import Exceptions.IngresoVacioException;
 
 public class PrendasTest {
-	private Usuario juan = new Usuario();
 	
 	@Test
-	public void seAnadeCorrectamenteUnaPrenda() throws IngresoNoValidoException {
+	public void seAnadeCorrectamenteUnaPrenda()  {
 		Borrador buzoRoja = new Borrador();
 		Tipo buzo = new Tipo (Categoria.PARTESUPERIOR);
 		buzoRoja.especificarTipo(buzo);
@@ -26,12 +25,11 @@ public class PrendasTest {
 		buzoRoja.especificarMaterial(Material.LANA);
 		Prenda buzo1 = new Prenda();
 		buzo1 =	buzoRoja.crearPrenda();
-		juan.agregarPrenda(buzo1);
-		assertEquals(buzo1,juan.getPrenda(0));
+	
 	}
 	
 	@Test (expected = IngresoVacioException.class)
-	public void errorPorIngresoVacio() throws IngresoVacioException {
+	public void errorPorIngresoVacio() {
 		Borrador camperaRoja = new Borrador();
 		camperaRoja.especificarColor(Color.ROJO);
 		camperaRoja.especificarMaterial(Material.LANA);

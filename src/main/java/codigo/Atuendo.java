@@ -1,26 +1,37 @@
 package codigo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import Exceptions.IngresoVacioException;
+import Exceptions.ListaVaciaException;
 
 public class Atuendo {
 	Prenda prendaSuperior;
 	Prenda prendaInferior;
 	Prenda calzado;
 	Prenda accesorio;
-	ClimaActual clima;
+	List<Prenda> prendas;
+	ProveedorClima proovedor;
 	
-	public Atuendo(Usuario usuario) {
-		prendaSuperior = seleccionarPrenda(usuario,Categoria.PARTESUPERIOR);
-		prendaInferior = seleccionarPrenda(usuario,Categoria.PARTEINFERIOR);
-		calzado = seleccionarPrenda(usuario,Categoria.CALZADO);
-		accesorio = seleccionarPrenda(usuario,Categoria.ACCESORIOS);
+	public Atuendo(List<Prenda> prendas) {
+		this.prendas = prendas;
 	}
 	
-	public Prenda seleccionarPrenda(Usuario usuario,Categoria cat) {
-		if (cat == Categoria.PARTESUPERIOR) 
-		return  usuario.prendas.stream().filter(p->p.getClimaPrenda() == clima.obtener()).findFirst();
-		else
-		return  usuario.prendas.stream().filter(p->p.getClimaPrenda() == clima.obtener() && p.combina(prendaSuperior)).findFirst();
+	public void generarAtuendo() {
+		prendaSuperior = seleccionarPrenda(Categoria.PARTESUPERIOR);
+		prendaInferior = seleccionarPrenda(Categoria.PARTEINFERIOR);
+		calzado = seleccionarPrenda(Categoria.CALZADO);
+		accesorio = seleccionarPrenda(Categoria.ACCESORIOS);
 	}
+	
+	private Prenda seleccionarPrenda(Categoria cat) {
+	if(prendas != null) {
+	return prendas.stream().filter(p->p.esAptaParaElClima(proovedor.getTemperatura()) && p.combina(prendaSuperior)).findFirst();
+	}
+	else {
+		throw new ListaVaciaException("no ingreso prendas");
+	}
+}
 }

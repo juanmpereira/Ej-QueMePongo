@@ -67,7 +67,9 @@ public class Prenda {
 		return colorSecuendario;
 	}
 
-
+	public boolean esAptaParaElClima(int temperatura) {
+		return true;
+	}
 	
 
 }
