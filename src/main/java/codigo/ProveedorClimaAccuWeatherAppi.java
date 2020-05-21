@@ -30,8 +30,8 @@ public class ProveedorClimaAccuWeatherAppi implements ProveedorClima  {
 	public static void actualizarClima() {
 		Horario tiempo2 = new Horario();
 			if(Duration.ofDays(1)) { //debo ver como funciona el Duration para ver como hacer el if
-			AccuWeatherAPI apiClima2 = new AccuWeatherAPI();
-			condicionesClimaticas = apiClima2.getWeather("Buenos Aires, Argentina");
+			AccuWeatherAPI apiClima = new AccuWeatherAPI();
+			condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
 		}
 	}
 }
