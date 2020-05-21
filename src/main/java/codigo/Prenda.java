@@ -58,6 +58,10 @@ public class Prenda {
 	public Color getColor() {
 		return color;
 	}
+	
+	public Categoria getCategoria(){
+		return this.tipo.categoria();
+	}
 
 	public Material getMaterial() {
 		return material;

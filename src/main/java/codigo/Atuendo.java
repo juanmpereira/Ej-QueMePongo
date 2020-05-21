@@ -28,7 +28,7 @@ public class Atuendo {
 	
 	private Prenda seleccionarPrenda(Categoria cat) {
 	if(prendas != null) {
-	return prendas.stream().filter(p->p.esAptaParaElClima(proovedor.getTemperatura()) && p.combina(prendaSuperior)).findFirst();
+	return prendas.stream().filter(p->p.esAptaParaElClima(proovedor.getTemperatura()) && p.combina(prendaSuperior)&& p.getCategoria() == cat).findFirst();
 	}
 	else {
 		throw new ListaVaciaException("no ingreso prendas");
