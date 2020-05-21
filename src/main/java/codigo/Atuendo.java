@@ -3,6 +3,7 @@ package codigo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import Exceptions.IngresoVacioException;
 import Exceptions.ListaVaciaException;
@@ -27,11 +28,15 @@ public class Atuendo {
 	}
 	
 	private Prenda seleccionarPrenda(Categoria cat) {
-	if(prendas != null) {
-	return prendas.stream().filter(p->p.esAptaParaElClima(proovedor.getTemperatura()) && p.combina(prendaSuperior)&& p.getCategoria() == cat).findFirst();
-	}
+	if(lasQueSonDeCategoria(cat) != null) {
+	return lasQueSonDeCategoria(cat).filter(p->p.esAptaParaElClima(proovedor.getTemperatura()) && p.combina(prendaSuperior)).findFirst();
+		}
 	else {
-		throw new ListaVaciaException("no ingreso prendas");
+		throw new ListaVaciaException("no ingreso prendas de la categoria " + cat);
+		}
 	}
-}
+	
+	private Stream<Prenda> lasQueSonDeCategoria(Categoria cat) {
+		return  prendas.stream().filter(p->p.getCategoria() == cat);
+	}
 }
