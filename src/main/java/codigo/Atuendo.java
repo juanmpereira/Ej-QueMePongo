@@ -28,15 +28,13 @@ public class Atuendo {
 	}
 	
 	private Prenda seleccionarPrenda(Categoria cat) {
-	if(lasQueSonDeCategoria(cat) != null) {
-	return lasQueSonDeCategoria(cat).filter(p->p.esAptaParaElClima(proovedor.getTemperatura()) && p.combina(prendaSuperior)).findFirst();
-		}
-	else {
-		throw new ListaVaciaException("no ingreso prendas de la categoria " + cat);
-		}
+	int temperatura = proovedor.getTemperatura();
+	Optional<Prenda> opcional = SonDeCategoria(cat).filter(p->p.esAptaParaElClima(temperatura) && p.combina(prendaSuperior)).findFirst();
+	return opcional.get();	
 	}
+
 	
-	private Stream<Prenda> lasQueSonDeCategoria(Categoria cat) {
+	private Stream<Prenda> SonDeCategoria(Categoria cat) {
 		return  prendas.stream().filter(p->p.getCategoria() == cat);
 	}
 }
