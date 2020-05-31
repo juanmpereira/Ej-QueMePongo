@@ -60,7 +60,7 @@ public class Prenda {
 	}
 	
 	public Categoria getCategoria(){
-		return this.tipo.categoria();
+		return tipo.getCategoria();
 	}
 
 	public Material getMaterial() {

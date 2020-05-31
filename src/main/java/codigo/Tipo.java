@@ -9,7 +9,7 @@ public class Tipo {
 		Preconditions.validateNotNull(cat);
 		this.cat = cat;
 	}
-	public Categoria categoria() {
+	public Categoria getCategoria() {
 		return this.cat;
 	}
 }

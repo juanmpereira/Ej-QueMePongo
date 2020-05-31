@@ -29,7 +29,7 @@ public class AtuendoTest {
 	ProovedorClima proovedor = new ProovedorClimaAccuWeatherAppi();
 	
 	@Test
-	public void aVer() {
+	public void crearAtuendo() {
 		superior1.setTipo(prendaS);
 		inferior1.setTipo(prendaI);
 		accesorio1.setTipo(prendaA);
