@@ -2,6 +2,7 @@ package test;
 import codigo.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
@@ -17,17 +18,17 @@ import Exceptions.IngresoVacioException;
 public class PrendasTest {
 	
 	@Test
-	public void seAnadeCorrectamenteUnaPrenda()  {
-		Borrador buzoRoja = new Borrador();
+	public void seAnadePrendaCorrectamente() {
+		Borrador buzoRojo = new Borrador();
 		Tipo buzo = new Tipo (Categoria.PARTESUPERIOR);
-		buzoRoja.especificarTipo(buzo);
-		buzoRoja.especificarColor(Color.ROJO);
-		buzoRoja.especificarMaterial(Material.LANA);
+		buzoRojo.especificarTipo(buzo);
+		buzoRojo.especificarColor(Color.ROJO);
+		buzoRojo.especificarMaterial(Material.LANA);
 		Prenda buzo1 = new Prenda();
-		buzo1 =	buzoRoja.crearPrenda();
-	
+		buzo1 =	buzoRojo.crearPrenda();
+		assertTrue(buzo1.esAptaParaElClima(20));
 	}
-	
+		
 	@Test (expected = IngresoVacioException.class)
 	public void errorPorIngresoVacio() {
 		Borrador camperaRoja = new Borrador();

@@ -5,13 +5,18 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-public class ProveedorClimaAccuWeatherAppi implements ProveedorClima  {
+public class ProovedorClimaAccuWeatherAppi implements ProovedorClima  {
 	private AccuWeatherAPI apiClima;
-	private static ProveedorClimaAccuWeatherAppi INSTANCE = null;
+	private static ProovedorClimaAccuWeatherAppi INSTANCE = null;
 	static List<Map<String, Object>> condicionesClimaticas;
     static Duration periodo = Duration.ofDays(1);
     static LocalDate dia;
-	
+    
+    public ProovedorClimaAccuWeatherAppi getInstance() {
+    	createInstance();
+    	return INSTANCE;
+    	}
+
 	private void ProveedorClimaAccuWeatherAppi(){
 		AccuWeatherAPI apiClima = new AccuWeatherAPI();
 		condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
@@ -20,7 +25,7 @@ public class ProveedorClimaAccuWeatherAppi implements ProveedorClima  {
 	
 	private synchronized static void createInstance() {
 		if (INSTANCE == null) { 
-		INSTANCE = new ProveedorClimaAccuWeatherAppi();
+		INSTANCE = new ProovedorClimaAccuWeatherAppi();
 		}
 		actualizarClima();
 		}
@@ -35,9 +40,9 @@ public class ProveedorClimaAccuWeatherAppi implements ProveedorClima  {
 	
 	public static void actualizarClima() {
 		LocalDate fechaActual = LocalDate.now();
-		if(fechaActual.compareTo(dia.plus(periodo))> 0 ) {
+//		if(fechaActual.compareTo(dia.plus(periodo))> 0 ) {
 			AccuWeatherAPI apiClima = new AccuWeatherAPI();
 			condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
 		}
 	}
-}
+//}

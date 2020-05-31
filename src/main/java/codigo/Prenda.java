@@ -21,11 +21,11 @@ public class Prenda {
 	
 	
 	public boolean combina(Prenda prenda) {
-		if(prenda == null)
+	//	if(prenda == null)
 		return true;
-		else
-		return material == prenda.material && color == prenda.color;
-	} //como comprobar si combina la prenda o no.
+	//	else
+	//	return material == prenda.material && color == prenda.color;
+	} 
 
 	public void setTrama(String trama) {
 		this.trama = trama;

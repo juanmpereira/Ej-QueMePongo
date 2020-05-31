@@ -29,7 +29,7 @@ public class Usuario {
 	
 	public void crearAtuendo() {
 		Atuendo atuendo = new Atuendo(this.prendas);
-		atuendo.generarAtuendo();
+		atuendo.generate();
 		atuendo.mostrarAtuendo();
 		this.agregarAtuendo(atuendo);
 	}

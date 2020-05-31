@@ -14,13 +14,14 @@ public class Atuendo {
 	Prenda calzado;
 	Prenda accesorio;
 	List<Prenda> prendas;
-	ProveedorClima proovedor;
+	ProovedorClima proovedor;
 	
-	public Atuendo(List<Prenda> prendas) {
+	public Atuendo(List<Prenda> prendas,ProovedorClima proovedor) {
 		this.prendas = prendas;
+		this.proovedor = proovedor;
 	}
 	
-	public void generarAtuendo() {
+	public void generate() {
 		prendaSuperior = seleccionarPrenda(Categoria.PARTESUPERIOR);
 		prendaInferior = seleccionarPrenda(Categoria.PARTEINFERIOR);
 		calzado = seleccionarPrenda(Categoria.CALZADO);
@@ -42,6 +43,9 @@ public class Atuendo {
 		return "Atuendo [prendaSuperior=" + prendaSuperior + ", prendaInferior=" + prendaInferior + ", calzado="
 				+ calzado + ", accesorio=" + accesorio + "]";
 	}
-	
-	
+
+	public Prenda getPrendaSuperior() {
+		return prendaSuperior;
+	}
+			
 }
