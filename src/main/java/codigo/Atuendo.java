@@ -37,4 +37,11 @@ public class Atuendo {
 	private Stream<Prenda> SonDeCategoria(Categoria cat) {
 		return  prendas.stream().filter(p->p.getCategoria() == cat);
 	}
+
+	public String mostrarAtuendo() {
+		return "Atuendo [prendaSuperior=" + prendaSuperior + ", prendaInferior=" + prendaInferior + ", calzado="
+				+ calzado + ", accesorio=" + accesorio + "]";
+	}
+	
+	
 }

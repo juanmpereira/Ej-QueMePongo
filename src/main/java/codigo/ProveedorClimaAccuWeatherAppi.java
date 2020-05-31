@@ -9,8 +9,8 @@ public class ProveedorClimaAccuWeatherAppi implements ProveedorClima  {
 	private AccuWeatherAPI apiClima;
 	private static ProveedorClimaAccuWeatherAppi INSTANCE = null;
 	static List<Map<String, Object>> condicionesClimaticas;
-    Duration periodo = Duration.ofDays(1);
-    LocalDate dia;
+    static Duration periodo = Duration.ofDays(1);
+    static LocalDate dia;
 	
 	private void ProveedorClimaAccuWeatherAppi(){
 		AccuWeatherAPI apiClima = new AccuWeatherAPI();
@@ -34,10 +34,10 @@ public class ProveedorClimaAccuWeatherAppi implements ProveedorClima  {
 	}
 	
 	public static void actualizarClima() {
-//		Horario tiempo2 = new Horario();
-	//		if(LocalDate.now() > dia.plus(periodo)) { //debo ver como funciona el Duration para ver como hacer el if
+		LocalDate fechaActual = LocalDate.now();
+		if(fechaActual.compareTo(dia.plus(periodo))> 0 ) {
 			AccuWeatherAPI apiClima = new AccuWeatherAPI();
 			condicionesClimaticas = apiClima.getWeather("Buenos Aires, Argentina");
 		}
 	}
-//}
+}
