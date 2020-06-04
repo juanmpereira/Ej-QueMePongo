@@ -1,12 +1,12 @@
 package codigo;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 import Exceptions.IngresoVacioException;
-import Exceptions.ListaVaciaException;
+
 
 public class Atuendo {
 	Prenda prendaSuperior;

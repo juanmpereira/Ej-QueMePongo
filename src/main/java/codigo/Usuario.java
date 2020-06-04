@@ -2,10 +2,13 @@ package codigo;
 
 import java.util.*;
 
+import Exceptions.NoExisteException;
+
 public class Usuario {
 	List<Atuendo> guardarropa = new ArrayList<Atuendo>();
 	List<Prenda> prendas = new ArrayList<Prenda>();
 	List<Recomendacion> recomendaciones = new ArrayList<Recomendacion>();
+	List<Recomendacion> recomendacionesAceptadas = new ArrayList<Recomendacion>();
 	
 	public Usuario(List<Prenda> prendas) {
 		this.prendas = prendas;
@@ -49,6 +52,23 @@ public class Usuario {
 	public void aplicar(Recomendacion recomendacion) {
 		recomendacion.aplicarEn(this);
 		quitarRecomendacion(recomendacion);
+		agregarAceptada(recomendacion);
 	}
 	
+	public void agregarAceptada(Recomendacion recomendacion) {
+		recomendacionesAceptadas.add(recomendacion);
+	}
+	
+	public void eliminarAceptada(Recomendacion recomendacion) {
+		recomendacionesAceptadas.remove(recomendacion);
+	}
+	
+	public void deshacer(Recomendacion recomendacion) {
+		if (recomendacionesAceptadas.contains(recomendacion)) {
+			recomendacion.volverAtras(this);
+			recomendacionesAceptadas.remove(recomendacion);
+		}
+		else 
+		new NoExisteException("no se puede deshacer algo que no se acepto");
+	}
 }

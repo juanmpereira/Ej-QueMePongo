@@ -11,4 +11,9 @@ public class QuitarRecomendacion implements Recomendacion{
 			usuario.quitarAtuendo(atuendo);
 		}
 		
+		public void volverAtras(Usuario usuario) {
+			Recomendacion recomendacion = new AgregarRecomendacion(atuendo);
+			recomendacion.aplicarEn(usuario);
+		}
+		
 }

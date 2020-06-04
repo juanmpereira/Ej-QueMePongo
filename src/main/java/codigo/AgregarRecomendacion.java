@@ -10,4 +10,9 @@ public class AgregarRecomendacion implements Recomendacion{
 		public void aplicarEn(Usuario usuario) {
 			usuario.agregarAtuendo(atuendo);
 		}
+		
+		public void volverAtras(Usuario usuario) {
+			Recomendacion recomendacion = new QuitarRecomendacion(atuendo);
+			recomendacion.aplicarEn(usuario);
+		}
 }
