@@ -3,9 +3,9 @@ package codigo;
 import java.util.*;
 
 public class Usuario {
-	List<Atuendo> guardarropa = new ArrayList();
-	List<Prenda> prendas = new ArrayList();
-	List<Recomendacion> recomendaciones = new ArrayList();
+	List<Atuendo> guardarropa = new ArrayList<Atuendo>();
+	List<Prenda> prendas = new ArrayList<Prenda>();
+	List<Recomendacion> recomendaciones = new ArrayList<Recomendacion>();
 	
 	public Usuario(List<Prenda> prendas) {
 		this.prendas = prendas;
@@ -33,16 +33,6 @@ public class Usuario {
 		atuendo.generate();
 		agregarAtuendo(atuendo);
 	}
-	
-	public void recomendarAgregar(Usuario usuario,Atuendo atuendo) {
-		Recomendacion recomendacion = new AgregarRecomendacion(atuendo); 
-		usuario.agregarRecomendacion(recomendacion);
-	}
-	
-	public void recomendarQuitar(Usuario usuario,Atuendo atuendo) {
-		Recomendacion recomendacion = new QuitarRecomendacion(atuendo);
-		usuario.agregarRecomendacion(recomendacion);
-	}
 
 	public void setPrendas(List<Prenda> prendas) {
 		this.prendas = prendas;
@@ -56,9 +46,9 @@ public class Usuario {
 		return recomendaciones;
 	}
 	
-	public void aplicarEn(Recomendacion recomendacion) {
+	public void aplicar(Recomendacion recomendacion) {
 		recomendacion.aplicarEn(this);
+		quitarRecomendacion(recomendacion);
 	}
 	
-		
 }

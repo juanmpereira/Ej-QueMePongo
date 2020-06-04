@@ -56,8 +56,9 @@ public class UsuarioTest {
 			usuario1.crearAtuendo();
 			List<Prenda> prendas2 = new ArrayList();
 			Usuario usuario2 = new Usuario(prendas2);
-			usuario1.recomendarAgregar(usuario2, usuario1.getGuardarropa().get(0));
-			usuario2.aplicarEn(usuario2.getRecomendaciones().get(0));
+			Recomendacion recomendacion1 = new AgregarRecomendacion(usuario1.getGuardarropa().get(0));
+			usuario2.agregarRecomendacion(recomendacion1);
+			usuario2.aplicar(usuario2.getRecomendaciones().get(0));
 			assertEquals(0,usuario2.getRecomendaciones().size());
 			assertEquals(usuario1.getGuardarropa(), usuario2.getGuardarropa());
 		}
