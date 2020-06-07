@@ -9,6 +9,7 @@ public class ProovedorClimaAccuWeatherAppi implements ProovedorClima  {
 	private AccuWeatherAPI apiClima;
 	private static ProovedorClimaAccuWeatherAppi INSTANCE = null;
 	static List<Map<String, Object>> condicionesClimaticas;
+//	Map<String, Object> alertas = apiClima.getAlertas("Buenos Aires"); 
     static Duration periodo = Duration.ofDays(1);
     static LocalDate dia;
     
@@ -35,6 +36,11 @@ public class ProovedorClimaAccuWeatherAppi implements ProovedorClima  {
 	//	return  condicionesClimaticas.get(0).get("Temperature").get("value").toDegrees(); //tomemoslo como que funciona
 		//pero en realidad hay que castearlo a mano y es mas un quilombo
 		return 20; //supones que retorna los grados
+	}	
+	
+	public TipoAlerta getAlerta() {
+//		return condicionesClimaticas.getAlerts("Buenos Aires");
+		return new Granizo();
 	}
 	
 	public static void actualizarClima() {

@@ -9,6 +9,7 @@ public class Usuario {
 	List<Prenda> prendas = new ArrayList<Prenda>();
 	List<Recomendacion> recomendaciones = new ArrayList<Recomendacion>();
 	List<Recomendacion> recomendacionesAceptadas = new ArrayList<Recomendacion>();
+//	List<Contacto> contactos = new ArrayList<>();
 	
 	public Usuario(List<Prenda> prendas) {
 		this.prendas = prendas;
