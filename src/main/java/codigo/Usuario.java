@@ -9,7 +9,7 @@ public class Usuario {
 	List<Prenda> prendas = new ArrayList<Prenda>();
 	List<Recomendacion> recomendaciones = new ArrayList<Recomendacion>();
 	List<Recomendacion> recomendacionesAceptadas = new ArrayList<Recomendacion>();
-//	List<Contacto> contactos = new ArrayList<>();
+	List<Contacto> contactos = new ArrayList<>();
 	
 	public Usuario(List<Prenda> prendas) {
 		this.prendas = prendas;
@@ -72,4 +72,17 @@ public class Usuario {
 		else 
 		new NoExisteException("no se puede deshacer algo que no se acepto");
 	}
+
+	public List<Prenda> getPrendas() {
+		return prendas;
+	}
+
+	public List<Contacto> getContactos() {
+		return contactos;
+	}
+
+	public void setContactos(List<Contacto> contactos) {
+		this.contactos = contactos;
+	}
+	
 }

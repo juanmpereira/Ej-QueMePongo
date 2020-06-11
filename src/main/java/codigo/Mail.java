@@ -1,8 +1,9 @@
 package codigo;
 
-public class Mail implements LugarAvisos  {
+public class Mail implements Contacto  {
 		String direcMail;
 		MailSender mailSender = new MailSender();
+		
 		public Mail(String direcMail) {
 			this.direcMail = direcMail;
 		}

@@ -1,6 +1,6 @@
 package codigo;
 
-public class Notificacion implements LugarAvisos {
+public class Notificacion implements Contacto {
 	NotificacionService servicio = new NotificacionService();
 	
 	@Override

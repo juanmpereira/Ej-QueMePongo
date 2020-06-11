@@ -1,6 +1,6 @@
 package codigo;
 
-public interface LugarAvisos {
+public interface Contacto {
 		public void notificarAlerta(TipoAlerta alerta);
 }
 
