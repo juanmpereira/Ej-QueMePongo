@@ -9,7 +9,33 @@ public class Usuario {
 	List<Prenda> prendas = new ArrayList<Prenda>();
 	List<Recomendacion> recomendaciones = new ArrayList<Recomendacion>();
 	List<Recomendacion> recomendacionesAceptadas = new ArrayList<Recomendacion>();
-	List<Contacto> contactos = new ArrayList<>();
+	List<InteresadoObserver> interesados = new ArrayList<InteresadoObserver>();
+	Contacto medioContacto;
+	Atuendo propuestaDiaria;
+	
+	public Contacto getMedioContacto() {
+		return medioContacto;
+	}
+
+	public void setMedioContacto(Contacto medioContacto) {
+		this.medioContacto = medioContacto;
+	}
+
+	public void seActualizaronAlertas(Alerta alerta) {
+		interesados.forEach(i->i.notificarAlertas(this,alerta));
+	}
+	
+	public void agregarInteresado(InteresadoObserver interesado) {
+		interesados.add(interesado);
+	}
+	
+	public void quitarInteresado(InteresadoObserver interesado) {
+		interesados.remove(interesado);
+	}
+	
+	public void actualizarPropuestaDiaria(Atuendo atuendo){
+		propuestaDiaria = atuendo;
+	}
 	
 	public Usuario(List<Prenda> prendas) {
 		this.prendas = prendas;
@@ -75,14 +101,6 @@ public class Usuario {
 
 	public List<Prenda> getPrendas() {
 		return prendas;
-	}
-
-	public List<Contacto> getContactos() {
-		return contactos;
-	}
-
-	public void setContactos(List<Contacto> contactos) {
-		this.contactos = contactos;
 	}
 	
 }

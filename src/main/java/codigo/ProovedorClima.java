@@ -5,5 +5,5 @@ public interface ProovedorClima {
 
 	public ProovedorClima getInstance();
 	
-	public TipoAlerta getAlerta();
+	public Alerta getAlerta();
 }

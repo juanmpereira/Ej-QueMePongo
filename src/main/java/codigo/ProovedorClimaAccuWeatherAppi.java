@@ -38,7 +38,7 @@ public class ProovedorClimaAccuWeatherAppi implements ProovedorClima  {
 		return 20; //supones que retorna los grados
 	}	
 	
-	public TipoAlerta getAlerta() {
+	public Alerta getAlerta() {
 //		return condicionesClimaticas.getAlerts("Buenos Aires");
 		return new Granizo();
 	}

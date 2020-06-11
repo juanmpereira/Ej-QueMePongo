@@ -1,11 +1,15 @@
 package codigo;
 
 public class Notificacion implements Contacto {
-	NotificacionService servicio = new NotificacionService();
 	
-	@Override
-	public void notificarAlerta(TipoAlerta alerta) {
-		servicio.notify(alerta.aviso());
+//	NotificationService servicio;
+	
+	public Notificacion(Usuario usuario) {
+	//	servicio = new NotificationService(Usuario usuario)
+	}
+	
+	public void notificarAlerta(Alerta alerta) {
+	//	servicio.notify(alerta.aviso());
 	}
 
 }

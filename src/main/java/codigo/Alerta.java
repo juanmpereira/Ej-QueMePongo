@@ -1,6 +1,6 @@
 package codigo;
 
-public interface TipoAlerta {
+public interface Alerta {
 	public String aviso();
 
 }
