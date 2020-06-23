@@ -8,7 +8,7 @@ public class Notificacion implements Contacto {
 	//	servicio = new NotificationService(Usuario usuario)
 	}
 	
-	public void notificarAlerta(Alerta alerta) {
+	public void notificar(Alerta alerta) {
 	//	servicio.notify(alerta.aviso());
 	}
 

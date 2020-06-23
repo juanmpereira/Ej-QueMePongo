@@ -1,5 +1,5 @@
 package codigo;
 
 public interface Contacto {
-	public void notificarAlerta(Alerta alerta);
+	public void notificar(Alerta alerta);
 }

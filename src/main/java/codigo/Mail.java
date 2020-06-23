@@ -8,7 +8,7 @@ public class Mail implements Contacto  {
 			this.direcMail = direcMail;
 		}
 		
-		public void notificarAlerta(Alerta alerta){
+		public void notificar(Alerta alerta){
 //			mailSender.send(direcMail, alerta.aviso());
 		}
 

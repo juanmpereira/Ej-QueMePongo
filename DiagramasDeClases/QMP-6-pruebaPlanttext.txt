@@ -1,0 +1,82 @@
+@startuml
+
+title Relationships - Class Diagram
+
+QMP -> Repositorio
+QMP -> ProovedorClima
+QMP -> GeneradorPropuesta
+QMP -> Usuario
+GeneradorPropuesta -> Usuario
+Usuario -> Interesado
+Usuario -> Contacto
+PropuestaObserver -> GeneradorPropuesta
+ClimaObserver -> Alerta
+ClimaObserver -> Contacto
+
+
+Class QMP{
+RepositorioUsuarios
+ProovedorClima
+GeneradorPropuesta
+ingresoAlSistem()
+actualizarAlerta()
+}
+
+Class Repositorio{
+usuarios
+getUsuarios()
+}
+
+Interface ProovedorClima{
+getAlerta()
+}
+
+Class GeneradorPropuesta{
+retirarPropuestas()
+}
+
+Class Usuario{
+interesados
+medioContacto
+propuestaDiaria
+actualizarPropuestas()
+seActualizaronAlertas()
+}
+
+Interface Interesado {
+notificarAlerta()
+}
+
+Class PropuestaObserver extends Interesado{
+notificarAlerta()
+}
+
+Class ClimaObserver extends Interesado{
+notificarAlerta()
+}
+
+Interface Alerta{
+msg()
+}
+
+Class Granizo extends Alerta{
+msg()
+}
+
+Class Tormenta extends Alerta{
+msg()
+}
+
+Interface Contacto{
+notificar()
+}
+
+Class Mail extends Contacto {
+notificar()
+}
+
+Class Notificacion extends Contacto{
+notificar()
+}
+
+@enduml
