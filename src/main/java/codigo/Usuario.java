@@ -16,6 +16,10 @@ public class Usuario {
 	public Contacto getMedioContacto() {
 		return medioContacto;
 	}
+	
+	public Atuendo getPropuestaDiaria() {
+		return propuestaDiaria;
+	}
 
 	public void setMedioContacto(Contacto medioContacto) {
 		this.medioContacto = medioContacto;

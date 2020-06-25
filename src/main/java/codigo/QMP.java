@@ -7,6 +7,11 @@ public class QMP {
 	ProovedorClima proovedor = new ProovedorClimaAccuWeatherAppi();
 	GeneradorPropuesta generador; 
 	
+	public QMP(RepositorioUsuarios repo, GeneradorPropuesta generador) {
+		this.repoUsuarios = repo;
+		this.generador = generador;
+	}
+	
 	
 	public void ingresarAlSistema() {
 		actualizarAlertas();
@@ -17,7 +22,6 @@ public class QMP {
 		Alerta alertas = proovedor.getAlerta();
 		repoUsuarios.getUsuarios().forEach(u->u.seActualizaronAlertas(alertas));
 	} 
-	
 	
 	public void calcularSugerencias() {
 		repoUsuarios.getUsuarios().forEach(u-> generador.realizarPropuestas(u,proovedor));
